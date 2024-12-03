@@ -20,7 +20,9 @@ class HomeController extends Controller
         $depositRequests = depositrequest::where('status',0)->with(['bank','user'])->get();
         $orders=Investment::where('end_date_timestamp',">",Carbon::now())->count();
         $profit=Sale::sum('profit');
-        return view('home',compact('withdrawrequests','depositRequests','orders','profit'));
+        $depositRequestsSum = depositrequest::where('status' , 1)->sum('depositamount');
+        $withdrawRequestsSum = Withdrawrequest::where('status' , 1)->sum('withdrawamount');
+        return view('home',compact('withdrawrequests','depositRequests','orders','profit','depositRequestsSum','withdrawRequestsSum'));
     }
 
 

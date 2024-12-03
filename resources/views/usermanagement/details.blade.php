@@ -58,6 +58,12 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <th><span class="fw-medium">Total Withdraw Amount : </span></th>
+                                                    <td>{{ ucwords($sumwithdrawrequest) }} <small
+                                                            class="text-danger">(PKR)</small></td>
+                                                </tr>
+
+                                                <tr>
                                                     <th><span class="fw-medium">Total Team Members : </span></th>
                                                     <td>
                                                         <?php

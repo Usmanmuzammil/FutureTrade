@@ -14,7 +14,7 @@
                     <div class="d-flex align-items-end justify-content-between mt-4">
                         <div>
                             <h4 class="fs-22 fw-semibold ff-secondary mb-4"><span class="counter-value"
-                                    data-target="{{ App\Models\Withdrawrequest::count() }}">0</span> </h4>
+                                    data-target="{{ $withdrawRequestsSum }}">0</span><small>PKR</small></h4>
                             <a href="/admin/withdraw/index" class="text-decoration-underline">Withdraw History</a>
                         </div>
                         <div class="avatar-sm flex-shrink-0">
@@ -32,13 +32,13 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div class="flex-grow-1 overflow-hidden">
-                            <p class="text-uppercase fw-medium text-muted text-truncate mb-0"> Total Deposits</p>
+                            <p class="text-uppercase fw-medium text-muted text-truncate mb-0"> Total Deposit Amount</p>
                         </div>
                     </div>
                     <div class="d-flex align-items-end justify-content-between mt-4">
                         <div>
                             <h4 class="fs-22 fw-semibold ff-secondary mb-4"><span class="counter-value"
-                                    data-target="{{ App\Models\depositrequest::count() }}">0</span> </h4>
+                                    data-target="{{ $depositRequestsSum }}">0</span><small>PKR</small> </h4>
                             <a href="/admin/deposit/index" class="text-decoration-underline">Deposit History</a>
                         </div>
                         <div class="avatar-sm flex-shrink-0">

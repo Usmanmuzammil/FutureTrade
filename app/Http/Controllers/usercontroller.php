@@ -265,6 +265,7 @@ class usercontroller extends Controller
     {
         $userId = Auth::id(); // Fetch the authenticated user's ID
         $sumdepositrequest = depositrequest::where('user_id', $id)->where('status',1)->sum('depositamount');
+        $sumwithdrawrequest = Withdrawrequest::where('user_id', $id)->where('status',1)->sum('withdrawamount');
 
         // Fetch the user record based on the provided ID
         $user = User::findOrFail($id);
@@ -273,7 +274,7 @@ class usercontroller extends Controller
         $controller = new ManageMemberController();
         $commissions = $controller->getCommissionsOfAUser($user->id);
         // Pass the user record and paginated data to the view
-        return view('usermanagement.details', compact('user', 'sumdepositrequest', 'withdrawrequests', 'depositRequests','commissions'));
+        return view('usermanagement.details', compact('user', 'sumdepositrequest', 'withdrawrequests', 'depositRequests','commissions','sumwithdrawrequest'));
     }
 
     public function depositRequest(Request $request, string $id)
