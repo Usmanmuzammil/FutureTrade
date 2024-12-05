@@ -273,7 +273,7 @@ class DepositController extends Controller
         $this->checkForFirstDepositBonus($depo); //responsible to add bonus for user.
         $this->distributeDepositCommisionToTeam($depo); //responsibile to add commission to team.
         //check total team deposit rewards
-        $this->checkDepositGoalReward($depo);
+        // $this->checkDepositGoalReward($depo);
         return back()->with(['message' => $message]);
     }
 
